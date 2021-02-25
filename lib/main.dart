@@ -1,3 +1,4 @@
+import 'package:clone_twitter/feed_page.dart';
 import 'package:clone_twitter/login_page.dart';
 import 'package:clone_twitter/register_page.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => InitialPage(),
         '/login': (context) => LoginPage(),
         '/register': (context) => RegisterPage(),
+        '/feed': (context) => FeedPage(),
       },
       theme: ThemeData(
         appBarTheme: AppBarTheme(

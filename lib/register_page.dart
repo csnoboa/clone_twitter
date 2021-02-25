@@ -96,7 +96,9 @@ class _RegisterPageState extends State<RegisterPage> {
                       "Next",
                       style: TextStyle(fontSize: 16),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/feed');
+                    },
                   ),
                 ),
               ),
