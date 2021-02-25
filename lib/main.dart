@@ -1,4 +1,5 @@
 import 'package:clone_twitter/login_page.dart';
+import 'package:clone_twitter/register_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => InitialPage(),
-        '/login': (context) => LoginPage()
+        '/login': (context) => LoginPage(),
+        '/register': (context) => RegisterPage(),
       },
       theme: ThemeData(
         appBarTheme: AppBarTheme(
@@ -39,6 +41,9 @@ class _InitialPageState extends State<InitialPage> {
     return Scaffold(
       body: Stack(
         children: [
+          Container(
+            color: Color(0xFFFFFFFF),
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -78,7 +83,9 @@ class _InitialPageState extends State<InitialPage> {
                     height: 40,
                     child: RaisedButton(
                       color: Colors.blue,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/register');
+                      },
                       child: Text(
                         'Create account',
                         style: TextStyle(

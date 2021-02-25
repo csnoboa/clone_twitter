@@ -1,87 +1,68 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key key}) : super(key: key);
+class RegisterPage extends StatefulWidget {
+  @override
+  _RegisterPageState createState() => _RegisterPageState();
+}
 
+class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          SizedBox(
-            width: 40,
-            height: 40,
-            child: Image.asset('assets/images/logo.png'),
-          ),
-          Container(width: 30),
-          TextButton(
-            onPressed: null,
-            child: Text('Sign up',
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 18,
-                )),
-          ),
-          IconButton(
-            onPressed: null,
-            icon: Icon(
-              Icons.adaptive.more,
-              color: Colors.blue,
+          Container(
+            width: MediaQuery.of(context).size.width / 2,
+            alignment: Alignment.centerLeft,
+            child: SizedBox(
+              width: 40,
+              height: 40,
+              child: Image.asset('assets/images/logo.png'),
             ),
           ),
         ],
       ),
       body: Stack(
         children: [
-          Container(
-            color: Color(0xFFFFFFFF),
-          ),
+          Container(color: Colors.white),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(35.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Log in to Twitter.',
+                  'Create your account',
                   style: TextStyle(
-                    fontSize: 22,
+                    fontSize: 30,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Container(height: 10),
-                TextFormField(
-                  style: TextStyle(fontSize: 20),
+                Container(height: 130),
+                TextField(
                   decoration: InputDecoration(
-                    labelText: 'Phone, email or username',
-                    labelStyle: TextStyle(
-                      color: Colors.black,
+                    hintText: 'Name',
+                  ),
+                ),
+                Container(height: 5),
+                Container(
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    '50',
+                    style: TextStyle(
                       fontSize: 16,
                     ),
                   ),
                 ),
-                Container(height: 10),
-                TextFormField(
-                  style: TextStyle(fontSize: 20),
+                Container(height: 20),
+                TextField(
                   decoration: InputDecoration(
-                    suffixIcon: Icon(Icons.remove_red_eye_outlined),
-                    labelText: 'Password',
-                    labelStyle: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                    ),
+                    hintText: 'Phone number or email address',
                   ),
                 ),
-                Container(height: 15),
-                Center(
-                  child: TextButton(
-                    onPressed: null,
-                    child: Text(
-                      'Forgot password?',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.grey,
-                      ),
-                    ),
+                Container(height: 10),
+                TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Date of birth',
                   ),
                 ),
               ],
@@ -106,13 +87,13 @@ class LoginPage extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(30),
                 child: Container(
-                  width: 80,
+                  width: 70,
                   height: 30,
                   child: RaisedButton(
                     textColor: Colors.white,
                     color: Colors.blue[300],
                     child: Text(
-                      "Log in",
+                      "Next",
                       style: TextStyle(fontSize: 16),
                     ),
                     onPressed: () {},
