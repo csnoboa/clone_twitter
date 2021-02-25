@@ -1,3 +1,4 @@
+import 'package:clone_twitter/login_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -8,23 +9,31 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Twitter Clone',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => InitialPage(),
+        '/login': (context) => LoginPage()
+      },
       theme: ThemeData(
+        appBarTheme: AppBarTheme(
+            iconTheme: IconThemeData(color: Colors.blue),
+            color: Color(0xFFFFFFFF),
+            elevation: 0),
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key}) : super(key: key);
+class InitialPage extends StatefulWidget {
+  InitialPage({Key key}) : super(key: key);
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _InitialPageState createState() => _InitialPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _InitialPageState extends State<InitialPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,7 +104,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     TextButton(
-                      onPressed: null,
+                      onPressed: () {
+                        setState(() {
+                          Navigator.pushNamed(context, '/login');
+                        });
+                      },
                       child: Text(
                         "Log in",
                         style: TextStyle(
