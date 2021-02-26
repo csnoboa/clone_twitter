@@ -1,3 +1,4 @@
+import 'package:clone_twitter/components/drawer.dart';
 import 'package:flutter/material.dart';
 
 class FeedPage extends StatefulWidget {
@@ -48,42 +49,7 @@ class _FeedPageState extends State<FeedPage> {
           ),
         ],
       ),
-      drawer: Drawer(
-        child: Column(
-          children: [
-            UserAccountsDrawerHeader(
-              currentAccountPicture: ClipOval(
-                child: Image.network(
-                  'https://i.pinimg.com/280x280_RS/33/74/bd/3374bd4ca90568d7f940253322433b08.jpg',
-                ),
-              ),
-              accountName: Text('Caique Noboa'),
-              accountEmail: Text('@caiqueson'),
-            ),
-            ListTile(
-              title: Text('Perfil'),
-              leading: Icon(Icons.person),
-              //  Anuncios do Twitter / Configurações e privacidade, Central de Ajuda
-            ),
-            ListTile(
-              title: Text('Listas'),
-              leading: Icon(Icons.list),
-            ),
-            ListTile(
-              title: Text('Tópicos'),
-              leading: Icon(Icons.logout),
-            ),
-            ListTile(
-              title: Text('Itens Salvos'),
-              leading: Icon(Icons.save),
-            ),
-            ListTile(
-              title: Text('Moments'),
-              leading: Icon(Icons.store_mall_directory),
-            ),
-          ],
-        ),
-      ),
+      drawer: DrawerCustomized(),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
