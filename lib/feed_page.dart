@@ -26,9 +26,16 @@ class _FeedPageState extends State<FeedPage> {
 
   void _onItemTapped(int index) {
     setState(() {
+      if (index == 3) {
+        floatingButtonIcon = Icon(Icons.message_outlined);
+      } else {
+        floatingButtonIcon = Icon(Icons.add);
+      }
       _selectedIndex = index;
     });
   }
+
+  Icon floatingButtonIcon = Icon(Icons.add);
 
   @override
   Widget build(BuildContext context) {
@@ -70,8 +77,11 @@ class _FeedPageState extends State<FeedPage> {
           ),
         ],
         currentIndex: _selectedIndex,
+        backgroundColor: Colors.white,
         unselectedItemColor: Colors.grey,
         selectedItemColor: Colors.blue,
+        selectedFontSize: 14,
+        unselectedFontSize: 14,
         onTap: _onItemTapped,
       ),
       body: Stack(
@@ -82,7 +92,7 @@ class _FeedPageState extends State<FeedPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: null,
-        child: Icon(Icons.add),
+        child: floatingButtonIcon,
       ),
     );
   }
