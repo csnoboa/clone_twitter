@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Twitter Clone',
-      initialRoute: '/',
+      initialRoute: '/feed',
       routes: {
         '/': (context) => InitialPage(),
         '/login': (context) => LoginPage(),
