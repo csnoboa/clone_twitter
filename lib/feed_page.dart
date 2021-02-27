@@ -1,3 +1,4 @@
+import 'package:clone_twitter/components/card_feed.dart';
 import 'package:clone_twitter/components/drawer.dart';
 import 'package:flutter/material.dart';
 
@@ -9,9 +10,32 @@ class FeedPage extends StatefulWidget {
 class _FeedPageState extends State<FeedPage> {
   int _selectedIndex = 0;
 
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
+  static List<Widget> _widgetOptions = <Widget>[
+    SingleChildScrollView(
+      child: Column(
+        children: [
+          CardFeed(
+            name: 'Caique Noboa',
+            username: '@caiqueson',
+            assetImage: 'assets/images/perfil.jpg',
+            time: '5m',
+            numberComments: 0,
+            numberRts: 2,
+            textBody: 'Ahhhh que sono',
+            numberLikes: 8,
+          ),
+          CardFeed(
+            name: 'Evelin Rodrigues',
+            username: '@evelinzinha',
+            assetImage: 'assets/images/perfil.jpg',
+            time: '2m',
+            numberComments: 3,
+            numberRts: 22,
+            textBody: 'Ahhhh que sono',
+            numberLikes: 13,
+          ),
+        ],
+      ),
     ),
     Text(
       'Index 1: Business',
