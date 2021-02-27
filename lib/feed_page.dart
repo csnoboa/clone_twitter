@@ -1,5 +1,6 @@
 import 'package:clone_twitter/components/card_feed.dart';
 import 'package:clone_twitter/components/drawer.dart';
+import 'package:clone_twitter/my_flutter_app_icons.dart';
 import 'package:flutter/material.dart';
 
 class FeedPage extends StatefulWidget {
@@ -23,16 +24,51 @@ class _FeedPageState extends State<FeedPage> {
             numberRts: 2,
             textBody: 'Ahhhh que sono',
             numberLikes: 8,
+            bigNumber: false,
+            verified: false,
+            retweet: false,
           ),
           CardFeed(
-            name: 'Evelin Rodrigues',
-            username: '@evelinzinha',
-            assetImage: 'assets/images/perfil.jpg',
+            name: 'milena',
+            username: '@wwwmlna',
+            assetImage: 'assets/images/perfil_milena.jpg',
+            time: '18h',
+            numberComments: 38,
+            numberRts: 740,
+            textBody:
+                'a única coisa q eu sinto falta na minha vida escolar eh dos salgados de qualidade duvidosa da cantina da escola',
+            numberLikes: 3.7,
+            bigNumber: true,
+            verified: false,
+            retweet: false,
+          ),
+          CardFeed(
+            name: 'Cid Cidoso',
+            username: '@naosalvo',
+            assetImage: 'assets/images/perfil_cid.jpg',
             time: '2m',
-            numberComments: 3,
-            numberRts: 22,
-            textBody: 'Ahhhh que sono',
-            numberLikes: 13,
+            numberComments: 931,
+            numberRts: 150,
+            textBody:
+                'Existe alguma confirmação q responda a questão: \nQUEM TEM A MAIOR CABEÇA DO BRASIL?',
+            numberLikes: 3.6,
+            bigNumber: true,
+            verified: true,
+            retweet: false,
+          ),
+          CardFeed(
+            name: 'Andre Noel',
+            username: '@ProgramadorREAL',
+            assetImage: 'assets/images/perfil_programador.jpg',
+            time: '25 de fev',
+            numberComments: 6,
+            numberRts: 0,
+            textBody:
+                'Existe alguma confirmação q responda a questão: \nQUEM TEM A MAIOR CABEÇA DO BRASIL?',
+            numberLikes: 210,
+            bigNumber: false,
+            verified: false,
+            retweet: false,
           ),
         ],
       ),
@@ -53,7 +89,7 @@ class _FeedPageState extends State<FeedPage> {
       if (index == 3) {
         floatingButtonIcon = Icon(Icons.message_outlined);
       } else {
-        floatingButtonIcon = Icon(Icons.add);
+        floatingButtonIcon = Icon(MyFlutterApp.feather);
       }
       _selectedIndex = index;
     });

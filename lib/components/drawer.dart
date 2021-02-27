@@ -1,3 +1,4 @@
+import 'package:clone_twitter/my_flutter_app_icons.dart';
 import 'package:flutter/material.dart';
 
 class DrawerCustomized extends StatefulWidget {
@@ -167,6 +168,17 @@ class _DrawerCustomizedState extends State<DrawerCustomized> {
                   title: Text(
                     'Help Center',
                     style: styleListTile,
+                  ),
+                ),
+                Container(height: 25),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Icon(MyFlutterApp.lamp, color: Colors.blue),
+                      Icon(MyFlutterApp.qrcode, color: Colors.blue)
+                    ],
                   ),
                 ),
               ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:clone_twitter/my_flutter_app_icons.dart';
 
 class CardFeed extends StatefulWidget {
   CardFeed(
@@ -10,7 +11,10 @@ class CardFeed extends StatefulWidget {
       this.time,
       this.numberComments,
       this.numberRts,
-      this.assetImage})
+      this.assetImage,
+      this.bigNumber,
+      this.verified,
+      this.retweet})
       : super(key: key);
 
   final String username;
@@ -20,7 +24,10 @@ class CardFeed extends StatefulWidget {
   final String assetImage;
   final int numberComments;
   final int numberRts;
-  final int numberLikes;
+  final double numberLikes;
+  final bool bigNumber;
+  final bool retweet;
+  final bool verified;
 
   @override
   _CardFeedState createState() => _CardFeedState(
@@ -31,7 +38,10 @@ class CardFeed extends StatefulWidget {
       time: this.time,
       numberComments: this.numberComments,
       numberRts: this.numberRts,
-      assetImage: this.assetImage);
+      assetImage: this.assetImage,
+      bigNumber: this.bigNumber,
+      verified: this.verified,
+      retweet: this.retweet);
 }
 
 class _CardFeedState extends State<CardFeed> {
@@ -43,7 +53,10 @@ class _CardFeedState extends State<CardFeed> {
       this.time,
       this.numberComments,
       this.numberRts,
-      this.assetImage});
+      this.assetImage,
+      this.bigNumber,
+      this.verified,
+      this.retweet});
 
   final String username;
   final String name;
@@ -52,7 +65,13 @@ class _CardFeedState extends State<CardFeed> {
   final String assetImage;
   final int numberComments;
   final int numberRts;
-  final int numberLikes;
+  bool bigNumber;
+  bool retweet;
+  bool verified;
+  double numberLikes;
+
+  Icon iconHeart = Icon(MyFlutterApp.heart_empty_1, color: Colors.grey);
+  bool liked = false;
 
   Container borderGrey = new Container(
     decoration: BoxDecoration(
@@ -72,7 +91,7 @@ class _CardFeedState extends State<CardFeed> {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(15),
+            padding: const EdgeInsets.only(top: 15, right: 15, left: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,15 +101,15 @@ class _CardFeedState extends State<CardFeed> {
                     width: 60,
                     height: 60,
                     child: Image.asset(
-                      'assets/images/perfil.jpg',
+                      this.assetImage,
                     ),
                   ),
                 ),
-                // Container(width: 15),
                 Container(
                   width: MediaQuery.of(context).size.width - (100),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    // crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -104,7 +123,17 @@ class _CardFeedState extends State<CardFeed> {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              Container(width: 10),
+                              Container(
+                                width: verified ? 35 : 0,
+                                child: IconButton(
+                                  icon: verified
+                                      ? Icon(Icons.verified, color: Colors.blue)
+                                      : Icon(Icons.verified,
+                                          color: Colors.white, size: 0),
+                                  onPressed: null,
+                                ),
+                              ),
+                              Container(width: 5),
                               Text('${this.username}'),
                             ],
                           ),
@@ -117,33 +146,61 @@ class _CardFeedState extends State<CardFeed> {
                           ),
                         ],
                       ),
-                      Container(height: 5),
                       Align(
                           alignment: Alignment.centerLeft,
                           child: Text('${this.textBody}')),
-                      Container(height: 15),
+                      Container(height: 5),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
                             children: [
-                              Icon(Icons.comment_outlined, color: Colors.grey),
+                              Icon(MyFlutterApp.comment_empty,
+                                  color: Colors.grey),
                               Container(width: 5),
                               Text('${this.numberComments}'),
                             ],
                           ),
                           Row(
                             children: [
-                              Icon(Icons.share_outlined, color: Colors.grey),
-                              Container(width: 5),
+                              Icon(MyFlutterApp.retweet_1, color: Colors.grey),
+                              Container(width: 15),
                               Text('${this.numberRts}'),
                             ],
                           ),
                           Row(
                             children: [
-                              Icon(Icons.hearing_outlined, color: Colors.grey),
-                              Container(width: 5),
-                              Text('${this.numberLikes}'),
+                              IconButton(
+                                icon: iconHeart,
+                                onPressed: () {
+                                  setState(
+                                    () {
+                                      if (liked) {
+                                        iconHeart = Icon(
+                                          MyFlutterApp.heart_empty_1,
+                                          color: Colors.grey,
+                                        );
+                                        liked = false;
+                                        if (!bigNumber) {
+                                          numberLikes = numberLikes - 1.0;
+                                        }
+                                      } else {
+                                        iconHeart = Icon(
+                                          MyFlutterApp.heart_1,
+                                          color: Colors.red,
+                                        );
+                                        if (!bigNumber) {
+                                          numberLikes = numberLikes + 1.0;
+                                        }
+                                        liked = true;
+                                      }
+                                    },
+                                  );
+                                },
+                              ),
+                              Text(bigNumber
+                                  ? '${this.numberLikes} K'
+                                  : '${this.numberLikes.round()}'),
                             ],
                           ),
                           Icon(Icons.share_outlined, color: Colors.grey),
