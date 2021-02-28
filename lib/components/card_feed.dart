@@ -124,10 +124,11 @@ class _CardFeedState extends State<CardFeed> {
                                 ),
                               ),
                               Container(
-                                width: verified ? 35 : 0,
+                                width: verified ? 30 : 0,
                                 child: IconButton(
                                   icon: verified
-                                      ? Icon(Icons.verified, color: Colors.blue)
+                                      ? Icon(Icons.verified,
+                                          color: Colors.blue, size: 18)
                                       : Icon(Icons.verified,
                                           color: Colors.white, size: 0),
                                   onPressed: null,
@@ -158,14 +159,16 @@ class _CardFeedState extends State<CardFeed> {
                               Icon(MyFlutterApp.comment_empty,
                                   color: Colors.grey),
                               Container(width: 5),
-                              Text('${this.numberComments}'),
+                              Text(numberComments != 0
+                                  ? '${this.numberComments}'
+                                  : ' '),
                             ],
                           ),
                           Row(
                             children: [
                               Icon(MyFlutterApp.retweet_1, color: Colors.grey),
                               Container(width: 15),
-                              Text('${this.numberRts}'),
+                              Text(numberRts != 0 ? '${this.numberRts}' : ''),
                             ],
                           ),
                           Row(

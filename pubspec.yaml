@@ -54,6 +54,7 @@ flutter:
     - assets/images/perfil_milena.jpg
     - assets/images/perfil_cid.jpg
     - assets/images/perfil_programador.jpg
+    - assets/images/perfil_curitiba.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

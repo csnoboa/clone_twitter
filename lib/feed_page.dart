@@ -64,10 +64,24 @@ class _FeedPageState extends State<FeedPage> {
             numberComments: 6,
             numberRts: 0,
             textBody:
-                'Existe alguma confirmação q responda a questão: \nQUEM TEM A MAIOR CABEÇA DO BRASIL?',
+                'Acabei de ver que ontem foi o aniversário da minha defesa de mestrado!',
             numberLikes: 210,
             bigNumber: false,
             verified: false,
+            retweet: false,
+          ),
+          CardFeed(
+            name: 'Prefeitura Curitiba',
+            username: '@Curitiba',
+            assetImage: 'assets/images/perfil_curitiba.jpg',
+            time: '5h',
+            numberComments: 0,
+            numberRts: 0,
+            textBody:
+                'Feira do Largo aos sábados e online são alternativas para compras',
+            numberLikes: 12,
+            bigNumber: false,
+            verified: true,
             retweet: false,
           ),
         ],
@@ -95,7 +109,7 @@ class _FeedPageState extends State<FeedPage> {
     });
   }
 
-  Icon floatingButtonIcon = Icon(Icons.add);
+  Icon floatingButtonIcon = Icon(MyFlutterApp.feather);
 
   @override
   Widget build(BuildContext context) {
