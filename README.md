@@ -3,6 +3,7 @@
 An application made in Flutter to copy the appearance of the Twitter application.
 
 Watch the gif demonstrating the application:
+
 ![](clone_twitter.gif)
 
 
