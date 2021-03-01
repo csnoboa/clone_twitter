@@ -16,23 +16,10 @@ class _FeedPageState extends State<FeedPage> {
       child: Column(
         children: [
           CardFeed(
-            name: 'Caique Noboa',
-            username: '@caiqueson',
-            assetImage: 'assets/images/perfil.jpg',
-            time: '5m',
-            numberComments: 0,
-            numberRts: 2,
-            textBody: 'Ahhhh que sono',
-            numberLikes: 8,
-            bigNumber: false,
-            verified: false,
-            retweet: false,
-          ),
-          CardFeed(
             name: 'milena',
             username: '@wwwmlna',
             assetImage: 'assets/images/perfil_milena.jpg',
-            time: '18h',
+            time: '1m',
             numberComments: 38,
             numberRts: 740,
             textBody:
@@ -74,7 +61,7 @@ class _FeedPageState extends State<FeedPage> {
             name: 'Prefeitura Curitiba',
             username: '@Curitiba',
             assetImage: 'assets/images/perfil_curitiba.jpg',
-            time: '5h',
+            time: '4h',
             numberComments: 0,
             numberRts: 0,
             textBody:
@@ -84,17 +71,30 @@ class _FeedPageState extends State<FeedPage> {
             verified: true,
             retweet: false,
           ),
+          CardFeed(
+            name: 'Caique Noboa',
+            username: '@caiqueson',
+            assetImage: 'assets/images/perfil.jpg',
+            time: '5h',
+            numberComments: 0,
+            numberRts: 2,
+            textBody: 'Ahhhh que sono',
+            numberLikes: 8,
+            bigNumber: false,
+            verified: false,
+            retweet: false,
+          ),
         ],
       ),
     ),
     Text(
-      'Index 1: Business',
+      'Index 1: Search',
     ),
     Text(
-      'Index 2: School',
+      'Index 2: Notifications',
     ),
     Text(
-      'Index 3: Mail',
+      'Index 3: Messages',
     ),
   ];
 
