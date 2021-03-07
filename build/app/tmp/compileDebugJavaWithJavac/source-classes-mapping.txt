@@ -1,4 +1,0 @@
-io/flutter/plugins/GeneratedPluginRegistrant.java
- io.flutter.plugins.GeneratedPluginRegistrant
-com/example/clone_twitter/BuildConfig.java
- com.example.clone_twitter.BuildConfig
