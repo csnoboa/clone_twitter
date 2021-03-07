@@ -14,6 +14,6 @@ See the comparisons between the real application (right) and the clone (left):
 ![](compare_create_account.png)
 ![](compare_perfil.png)
 
-You can download the application and install it on your phone (Android) at: build\app\outputs\flutter-apk\app-release.apk
+You can download the application and install it on your phone (Android): app-release.apk
 
 Or see the images based to build the app in the folder: images\original
